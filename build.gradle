@@ -10,6 +10,12 @@ repositories {
     }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'software.amazon.awssdk:bom:2.0.0-preview-8'
+    }
+}
+
 buildscript {
     ext {
         springBootVersion = '1.5.8.RELEASE'
@@ -33,7 +39,15 @@ configurations {
 
 dependencies {
     compile(
-            'org.springframework.boot:spring-boot-starter-web'
+            'org.springframework.boot:spring-boot-starter-web',
+            'com.amazonaws:aws-java-sdk-lex:1.11.285'
+//            'software.amazon.awssdk:core',
+//            'software.amazon.awssdk:utils',
+//            'software.amazon.awssdk:apache-client',
+//            'software.amazon.awssdk:cognitoidentity',
+//            'software.amazon.awssdk:lambda',
+//            'software.amazon.awssdk:lexmodelbuilding:2.0.0-preview-8',
+//            'software.amazon.awssdk:config',
     )
 
     runtime('org.hsqldb:hsqldb:2.3.2')
@@ -45,6 +59,7 @@ dependencies {
 
 bootRun {
     jvmArgs = ['-XX:MaxPermSize=128M']
+    systemProperties System.properties
 }
 
 sourceSets {
