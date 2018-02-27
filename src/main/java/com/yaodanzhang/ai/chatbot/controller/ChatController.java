@@ -15,10 +15,20 @@ public class ChatController {
     @Qualifier("awsChatService")
     private ChatService awsChatService;
 
+    @Autowired
+    @Qualifier("googleChatService")
+    private ChatService googleChatService;
+
     @RequestMapping(method = RequestMethod.GET, path = "/providers/aws/users/{user}/questions/{question}")
     public @ResponseBody String awsChat(@PathVariable(value="user") String user,
                                      @PathVariable(value="question") String question) {
         return awsChatService.answer(user, question);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/providers/google/users/{user}/questions/{question}")
+    public @ResponseBody String googleChat(@PathVariable(value="user") String user,
+                                     @PathVariable(value="question") String question) {
+        return googleChatService.answer(user, question);
     }
 
 }

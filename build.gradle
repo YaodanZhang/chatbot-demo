@@ -41,6 +41,7 @@ configurations {
 dependencies {
     compile(
             'org.springframework.boot:spring-boot-starter-web',
+            'ai.api:libai:1.6.12',
             'com.amazonaws:aws-java-sdk-lex:1.11.285'
 //            'software.amazon.awssdk:core',
 //            'software.amazon.awssdk:utils',
