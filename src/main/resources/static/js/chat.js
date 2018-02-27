@@ -2,7 +2,7 @@ var me = {};
 me.avatar = "https://avatars2.githubusercontent.com/u/366630?s=460&v=4";
 
 var you = {};
-you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
+you.avatar = "https://en.gravatar.com/userimage/64835859/2cfea7a77e469b20dec5ca13d51b2ae9.jpg?size=200";
 
 var user = 'init-user';
 
