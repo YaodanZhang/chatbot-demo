@@ -58,7 +58,7 @@ function resetChat(){
 }
 
 function sendQuestion(question) {
-  $.get( "users/" + user + "/questions/" + question, function( data ) {
+  $.get( "providers/aws/users/" + user + "/questions/" + question, function( data ) {
     insertChat("you", data);
   });
 }
